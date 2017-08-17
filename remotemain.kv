@@ -1,0 +1,92 @@
+<silisim>:
+    size_hint: 0.5,0.2
+    canvas:
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "Simek istediginiz kanalin adini giriniz."
+            TextInput:
+                id:delete
+                multiline: False
+            GridLayout:
+                cols: 2
+                Button:
+                    text: "Onay"
+                    on_release: app.sil()
+                Button:
+                    text: "Kapat"
+                    on_press: root.dismiss()
+<Taban>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1,.1
+            spacing: 15
+            padding: 7.5
+            Button:
+                text: "Ac/Kapa"
+                on_release: app.kumanda.tv_ackapa()
+        BoxLayout:
+            size_hint: 1,.1
+            spacing: 15
+            padding: 7.5
+            Button: 
+                text: "Vol -"
+                on_release: app.kumanda.ses_azalt()
+            Button:
+                text: "Vol +"
+                on_release: app.kumanda.ses_arttir()
+        BoxLayout:
+            size_hint: 1,.1
+            spacing: 15
+            padding: 7.5
+            Button:
+                text: "Kanal Listesi"
+                on_release: app.kumanda.kanal_listele()
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 1,.1
+            spacing: 15
+            padding: 7.5
+            Button:
+                text: "Program +"
+                on_release: app.kumanda.kanal_ilerlet()
+            Button:
+                text: "Program -"
+                on_release: app.kumanda.kanal_gerilet()
+        GridLayout:
+            spacing: 15
+            padding: 7.5
+            roxs: 4
+            cols: 3
+            size_hint:1,.4
+            Button:
+                text: "1"
+            Button:
+                text: "2"
+            Button:
+                text: "3"
+            Button:
+                text: "4"
+            Button:
+                text: "5"
+            Button:
+                text: "6"
+            Button:
+                text: "7"
+            Button:
+                text: "8"
+            Button:
+                text: "9"
+            Button:
+                text: "Kanal Ekle"
+            Button:
+                text: "0"
+            Button:
+                text: "Kanal Sil"
+                on_release: app.showSil()
