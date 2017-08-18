@@ -1,5 +1,10 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+Ekranci:
+    transition: FadeTransition()
+    Taban:
+    silisim:
 <silisim>:
-    size_hint: 0.5,0.2
+    name:"delete_name_page"
     canvas:
         Rectangle:
             size: self.size
@@ -20,8 +25,10 @@
                     on_release: app.sil()
                 Button:
                     text: "Kapat"
-                    on_press: root.dismiss()
+                    on_release: app.root.current = "main"
 <Taban>:
+
+    name:"main"
     BoxLayout:
         orientation: "vertical"
         BoxLayout:
@@ -89,4 +96,4 @@
                 text: "0"
             Button:
                 text: "Kanal Sil"
-                on_release: app.showSil()
+                on_release: app.root.current = "delete_name_page"
